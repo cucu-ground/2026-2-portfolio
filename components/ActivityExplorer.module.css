@@ -1,0 +1,135 @@
+.wrap {
+  padding: 48px 0 96px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.filter {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-2);
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.filter:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.filter[aria-pressed='true'] {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.filter small {
+  margin-left: 6px;
+  opacity: 0.7;
+}
+
+.year {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.yearTitle {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  align-self: start;
+}
+
+.items {
+  display: grid;
+  gap: 4px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 20px;
+  padding: 14px 0;
+}
+
+.item + .item {
+  border-top: 1px dashed var(--border);
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  padding-top: 3px;
+}
+
+.cat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.desc {
+  font-size: 15px;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+
+.project {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project:hover {
+  text-decoration: underline;
+}
+
+.ctf {
+  align-self: center;
+}
+
+@media (max-width: 760px) {
+  .year {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .yearTitle {
+    position: static;
+    font-size: 22px;
+  }
+  .item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

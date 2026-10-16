@@ -1,0 +1,36 @@
+.list {
+  border-top: 1px solid var(--border);
+}
+
+.list a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.list a:hover {
+  background: var(--bg-2);
+}
+
+.list code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.msg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list time {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}

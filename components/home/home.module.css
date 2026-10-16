@@ -1,0 +1,536 @@
+/* ===================== HERO ===================== */
+.hero {
+  padding: calc(var(--header-h) + 72px) 0 72px;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+}
+
+.heroSub {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.heroSub::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.heroTitle {
+  font-size: clamp(32px, 5.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.heroTitle em {
+  font-style: normal;
+  background: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: var(--text-2);
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  padding: 20px 22px;
+}
+
+.statusHead {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.statusHead b {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.statusList li + li {
+  border-top: 1px solid var(--border);
+}
+
+.statusList a,
+.statusList div {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  gap: 4px 12px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.statusList a:hover strong {
+  color: var(--accent);
+}
+
+.statusList strong {
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.statusList span:last-child {
+  grid-column: 2;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.heroTerminal {
+  margin-top: 56px;
+}
+
+.scrollHint {
+  display: inline-flex;
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.scrollHint:hover {
+  color: var(--text);
+}
+
+/* ===================== ABOUT ===================== */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.aboutText p {
+  color: var(--text-2);
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.aboutLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.facts {
+  border-top: 1px solid var(--border);
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  padding-top: 2px;
+}
+
+.facts dd {
+  font-size: 15px;
+}
+
+/* ===================== SKILLS ===================== */
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skillCard {
+  height: 100%;
+}
+
+.skillTitle {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.skillTitle + :global(.tags) {
+  margin-top: 16px;
+}
+
+.skillDesc {
+  font-size: 14px;
+  color: var(--text-2);
+  margin: 6px 0 16px;
+}
+
+/* ===================== PROJECTS ===================== */
+/* 기존 포트폴리오 레이아웃: 왼쪽 번호 · 태그 / 오른쪽 제목 · 설명 · 결과 · 화면 */
+.projects {
+  border-top: 1px solid var(--border);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 40px;
+  padding: 44px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.projNum {
+  font-family: var(--font-mono);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--border-strong);
+  margin-bottom: 14px;
+}
+
+.projTags {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.projTitle {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.projDesc {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.85;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+
+.projResults {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.projResults li {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 6px;
+}
+
+.projResults li::marker {
+  color: var(--accent);
+}
+
+.projShots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.projShots a {
+  display: block;
+  height: 360px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-2);
+}
+
+.projShots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s;
+}
+
+.projShots a:hover img {
+  transform: scale(1.02);
+}
+
+/* ===================== ACTIVITY ===================== */
+.activityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.actHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--text);
+}
+
+.actHead span {
+  font-size: 22px;
+  color: var(--text);
+}
+
+.actList li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.actPeriod {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.actTitle {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.actLive {
+  margin-top: 6px;
+}
+
+/* ===================== COURSE ===================== */
+.course {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  padding: 36px;
+}
+
+.courseTitle {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0 14px;
+  word-break: break-all;
+}
+
+.courseDesc {
+  color: var(--text-2);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.courseLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.courseUrls {
+  border-top: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.courseUrls div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.courseUrls dt {
+  font-family: var(--font-mono);
+  color: var(--muted);
+}
+
+.courseUrls dd a {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.courseUrls dd a:hover {
+  text-decoration: underline;
+}
+
+.sideTitle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.sideTitle small {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.featureList {
+  margin-bottom: 32px;
+}
+
+.featureList li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-2);
+  padding: 6px 0;
+}
+
+.featureList svg {
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+/* ===================== GUESTBOOK PREVIEW ===================== */
+.gbGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gbCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 160px;
+}
+
+.gbMessage {
+  font-size: 15px;
+  color: var(--text-2);
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.gbMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.gbMeta b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 960px) {
+  .heroGrid,
+  .aboutGrid,
+  .course {
+    grid-template-columns: 1fr;
+  }
+  .heroGrid {
+    gap: 36px;
+  }
+  .aboutGrid {
+    gap: 40px;
+  }
+  .skillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .activityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 28px;
+  }
+  .gbGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 48px);
+    min-height: auto;
+  }
+  .heroTerminal {
+    margin-top: 40px;
+  }
+  .skillGrid,
+  .activityGrid {
+    grid-template-columns: 1fr;
+  }
+  .course {
+    padding: 24px;
+    gap: 28px;
+  }
+  .project {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 36px 0;
+  }
+  .projNum {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .projTags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .projShots {
+    grid-template-columns: 1fr;
+  }
+  .projShots a {
+    height: 260px;
+  }
+  .facts div,
+  .courseUrls div {
+    grid-template-columns: 84px 1fr;
+  }
+}
